@@ -5,12 +5,14 @@ ruby '2.3.8'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'rails-i18n', '~> 5.1'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
@@ -43,9 +45,9 @@ gem 'grape-swagger', '~> 0.32' # grape doc
 gem 'grape-swagger-rails', '~> 0.3' # a web page
 gem 'grape-swagger-entity', '~> 0.3'
 
-# # paginate
-# gem 'kaminari', '~> 0.17'
-#
+# paginate
+gem 'kaminari', '~> 0.17'
+
 # # version of active_record
 # gem 'paper_trail', '~> 10.2'
 # gem 'grape-papertrail', '~> 0.2'
@@ -62,9 +64,9 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-performance'
 
-  # # TDD
-  # gem 'rspec-rails', '~> 3.8'
-  #
+  # TDD
+  gem 'rspec-rails', '~> 3.8'
+
   # # BDD
   # gem 'cucumber'
   # gem 'cucumber-rails', require: false

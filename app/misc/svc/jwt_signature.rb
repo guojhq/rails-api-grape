@@ -16,7 +16,7 @@ module Svc
     end
 
     def sign(payload)
-      payload['exp'] = Time.current.to_i + VF_API::JWT_EXP
+      payload['exp'] = Time.current.to_i + RANK::JWT_EXP
       "Bearer #{JWT.encode payload, ENV['JWT_SECRET'], 'HS256'}"
     end
 

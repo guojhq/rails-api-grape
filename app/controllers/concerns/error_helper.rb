@@ -1,14 +1,3 @@
-# 当 400 错误时(404 除外), 返回信息的构建规则
-# 1. 应该优先根据 HTTP status code 来判断请求状态,
-# 2. response 的格式为, {meta: {status: <code>}, errors: []/{}}
-# 3. meta 中会返回字段 status, 只有当需要显示 message 时, 才需要根据该字段确认 errors 的格式
-#
-# 说明:
-# - 401 验证错误 example {meta: {staus: 401},
-#                        errors: {type: 'Svc::ParamsSignature::SignError', message: 'incomplete parameters'}}
-# - 422 验证错误 example {meta: {status: 406, type: 'ActiveModel::Errors', base_object: {type: 'User', id: '1'}},
-#                        errors: [{filed: 'email', message: '格式不正确'}, {field: 'passwd', message: '密码格式不正确'}]}
-# - 422 其他错误 example {meta: {staus: 422}, errors: {message: 'incomplete parameters'}}, 可以通过 meta[:type] 来区分
 # rubocop:disable Lint/Void, Naming/UncommunicativeMethodParamName
 module ErrorHelper
   def auth_error!(e, meta = {})

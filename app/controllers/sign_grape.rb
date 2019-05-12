@@ -1,13 +1,8 @@
-# base for open grapes
+# base for sign grapes
 class SignGrape < BaseGrape
-  # use Middleware::TokenRefresh
   helpers AuthHelper
 
-  before do
-    if authenticate_required?
-      verify_jwt!
-    end
-  end
+  before { verify_jwt! if authenticate_required? }
 
   rescue_from(SignError) { |e| valid_error!(e) }
   rescue_from(Svc::JwtSignature::SignError) { |e| auth_error!(e) }

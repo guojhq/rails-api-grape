@@ -30,7 +30,10 @@ module Rank
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    config.api_only            = true
+    config.i18n.load_path      += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :'zh-CN'
+    config.time_zone           = 'Beijing'
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
