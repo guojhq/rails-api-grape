@@ -1,0 +1,62 @@
+require: rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'lib/tasks/cucumber.rake'
+    - 'lib/tasks/tools/generate_table_migration_and_i18n.rake'
+    - 'features/**/*'
+    - 'spec/**/*'
+    - 'script/**/*'
+    - 'config/**/*'
+    - 'app/models/concerns/has_singles.rb'
+    - 'Capfile'
+    - 'Gemfile'
+    - 'factories/**'
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Layout/AlignHash:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - app/controllers/**/*_grape.rb
+    - app/models/apply_main.rb
+
+Metrics/ClassLength:
+  Enabled: true
+  Exclude:
+    - app/controllers/**/*_grape.rb
+    - app/models/apply_main.rb
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false

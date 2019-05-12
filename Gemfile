@@ -34,10 +34,15 @@ gem 'rack-cors'
 gem 'figaro', '~> 1.1'
 
 # grape
-# gem 'grape', '~> 1.2'
-# gem 'hashie', '~> 3.6'
-# gem 'grape-entity', '~> 0.7'
-#
+gem 'grape', '~> 1.2'
+gem 'hashie', '~> 3.6'
+gem 'grape-entity', '~> 0.7'
+
+# swagger
+gem 'grape-swagger', '~> 0.32' # grape doc
+gem 'grape-swagger-rails', '~> 0.3' # a web page
+gem 'grape-swagger-entity', '~> 0.3'
+
 # # paginate
 # gem 'kaminari', '~> 0.17'
 #
@@ -54,9 +59,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
 
-  # gem 'rubocop', require: false
-  # gem 'rubocop-performance'
-  #
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
+
   # # TDD
   # gem 'rspec-rails', '~> 3.8'
   #
@@ -75,11 +80,6 @@ group :development, :test do
   #
   # # model comment
   # gem 'annotate'
-  #
-  # # swagger
-  # gem 'grape-swagger', '~> 0.32' # grape doc
-  # gem 'grape-swagger-rails', '~> 0.3' # a web page
-  # gem 'grape-swagger-entity', '~> 0.3'
 end
 
 group :development do
@@ -94,7 +94,6 @@ group :development do
   # gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
   # gem 'capistrano-rvm', require: false
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
