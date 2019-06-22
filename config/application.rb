@@ -35,6 +35,22 @@ module Rank
     config.i18n.default_locale = :'zh-CN'
     config.time_zone           = 'Beijing'
 
+    config.action_mailer.perform_caching    = false
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method    = :smtp
+    config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.raise_delivery_errors = true
+
+    config.action_mailer.smtp_settings = {
+      port:                 25,
+      :address              => "smtp.mxhichina.com",
+      :user_name            => "account@paimingjia.com",
+      :password             => "N3E5kWf5C2yvyGg",
+      ssl:                  false,
+      :enable_starttls_auto => false,
+      :openssl_verify_mode  => 'none',
+    }
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
