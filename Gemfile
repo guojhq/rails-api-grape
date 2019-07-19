@@ -55,6 +55,10 @@ gem 'kaminari', '~> 0.17'
 # # search helper
 # gem 'ransack', '~> 2.1'
 
+# taggable
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts_as_commentable_with_threading'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
